@@ -1,0 +1,9 @@
+{
+    "name": "ampare-engine/defaprotector",
+    "description": "Protect HTML5 Video From Save Out Of Browser, Video Grabber and Download Manager",
+        "license": "MIT",
+
+    "require": {
+        "php": "^5.4 || ^7.0"
+    }
+}
