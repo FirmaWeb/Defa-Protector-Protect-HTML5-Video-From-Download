@@ -16,8 +16,14 @@ It design to work with Most of Web Hosting include Share Hosting. For Example : 
  - Step 2 : Extract All The File.
  - Step 3 : Put defavid.php on subdomain root
 
-For Example : wwworothersubdomain.example.com/somedirectory/index.php
-You Put defavid.php Here : wwworothersubdomain.example.com/defavid.php
+For Example :
+``` 
+wwworothersubdomain.example.com/somedirectory/index.php
+```
+You Put defavid.php Here : 
+```
+wwworothersubdomain.example.com/defavid.php
+```
 
   - Step 4 : Put includetop.php on your CMS Directory.
   - Step 5 : Add This Code To The Most Top of the page after <?php
