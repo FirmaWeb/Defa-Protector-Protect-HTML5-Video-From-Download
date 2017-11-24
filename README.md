@@ -46,3 +46,5 @@ License : MIT License.
 P.s. Don't forget to visit our Company Website , For Great Freeware and Premiumware :
 
 http://www.ampareengine.com
+
+[![Download Defa Protect HTML5 Video From Download](https://img.shields.io/sourceforge/dt/defaprotecthtml5videodownload.svg)](https://sourceforge.net/projects/defaprotecthtml5videodownload/files/latest/download)
