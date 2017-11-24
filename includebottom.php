@@ -1,5 +1,6 @@
+<?php
 $output = ob_get_clean();
-if((strpos($output,'<video')|| strpos($output,'<audio')  || strpos($output,'<source') )  & !(strpos($output,'<safe')) ){
+if( (strpos($output,"<video") || strpos($output,"<audio")  || strpos($output,"<source") )  && !(strpos($output,"<safe")) ){
 //Check If There is Video On The Page Then Load Defa Protector
 // Source Tag Validation isn't need but for safety 
 //If HTML Contains Safe Tag, Then Not Load Defa Protector
