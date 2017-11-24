@@ -2,9 +2,9 @@
 session_start();
 ob_start();
 $crc = filter_var($_GET['crc']);
-$url = base64_decode(str_replace(sha_1($crc),'',$_SESSION['defaprotect'].$crc));
-if( $headerurl = get_headers($url,1)['Location'] ){
- $url = $headerurl;
+$file = $_SESSION['defaprotect'.$crc];
+if( $headerurl = @get_headers($file,1)['Location'] ){
+ $file = $headerurl;
 }
 if(isset($_SERVER['HTTP_RANGE'])){
  if(isset($_SERVER['HTTP_RANGE'])){
@@ -21,5 +21,4 @@ if(isset($_SERVER['HTTP_RANGE'])){
         readfile($file,false,$cong);
         die();
     }
-}
-}
+
