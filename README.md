@@ -1,5 +1,5 @@
 # Defa-Protector-Protect-HTML5-Video-From-Download
-## Defa Protector is A Simple Yet Cheap Way To Protect Your HTML5 Video From Browser Save As , Video Grabber , Download Manager
+Defa Protector is A Simple Yet Cheap Way To Protect Your HTML5 Video From Browser Save As , Video Grabber , Download Manager
 
 It design to work with Most of Web Hosting include Share Hosting. For Example : Ampare Domain Reseller Host.
 
