@@ -8,7 +8,7 @@ ob_start(function($output){
     // Source Tag Validation isn't need but for safety 
     //If HTML Contains Safe Tag, Then Not Load Defa Protector
         
-        $output = preg_replace_callback("/(^(<video|<audio|<source)[^>]*src *= *[\"']?)([^\"']*)/i", function ($matches) {
+        $output = preg_replace_callback("/((<video[^>]|<audio[^>]|source[^>])*src *= *[\"']?)([^\"']*)/i", function ($matches) {
             $crc = substr(sha1($matches['3']), -8, -1);
             $_SESSION['defaprotect'.$crc] = $matches['3'];
             return $matches[1] . "/defavid.php?crc=".$crc;
