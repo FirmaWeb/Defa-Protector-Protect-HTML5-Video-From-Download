@@ -11,8 +11,8 @@ ob_start(function($output){
         {
             $crc = substr(sha1($matches['2']), -8, -1);
             $_SESSION['defaprotect' . $crc] = $matches['2'];
-            return $matches[1] . wp_make_link_relative(plugins_url("defavid.php", __FILE__)) . "?crc=" . $crc;
-        }
+            return $matches[1] . "/defavid.php?crc=".$crc;
+          }
         //Super Ugly But Works Better
         $output = preg_replace_callback("/(<video[^>]*src *= *[\"']?)([^\"']*)/i", getURL, $output);
         $output = preg_replace_callback("/(<source[^>]*src *= *[\"']?)([^\"']*)/i", getURL, $output);
