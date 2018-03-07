@@ -7,12 +7,16 @@ ob_start(function($output){
     //Check If There is Video On The Page Then Load Defa Protector
     // Source Tag Validation isn't need but for safety 
     //If HTML Contains Safe Tag, Then Not Load Defa Protector
-        
-        $output = preg_replace_callback("/((<video[^>]|<audio[^>]|source[^>])*src *= *[\"']?)([^\"']*)/i", function ($matches) {
-            $crc = substr(sha1($matches['3']), -8, -1);
-            $_SESSION['defaprotect'.$crc] = $matches['3'];
-            return $matches[1] . "/defavid.php?crc=".$crc;
-      } , $output);
+                function getURL($matches)
+        {
+            $crc = substr(sha1($matches['2']), -8, -1);
+            $_SESSION['defaprotect' . $crc] = $matches['2'];
+            return $matches[1] . wp_make_link_relative(plugins_url("defavid.php", __FILE__)) . "?crc=" . $crc;
+        }
+        //Super Ugly But Works Better
+        $output = preg_replace_callback("/(<video[^>]*src *= *[\"']?)([^\"']*)/i", getURL, $output);
+        $output = preg_replace_callback("/(<source[^>]*src *= *[\"']?)([^\"']*)/i", getURL, $output);
+        $output = preg_replace_callback("/(<audio[^>]*src *= *[\"']?)([^\"']*)/i", getURL, $output);
     }
     return $output;
 });
